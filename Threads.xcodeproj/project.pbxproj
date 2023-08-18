@@ -15,6 +15,12 @@
 		56CE1E2B2A8EAEB100D6FFFC /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E2A2A8EAEB100D6FFFC /* RegistrationView.swift */; };
 		56CE1E2D2A8EB02B00D6FFFC /* ThreadsTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E2C2A8EB02B00D6FFFC /* ThreadsTextFieldModifier.swift */; };
 		56CE1E352A8EB6CA00D6FFFC /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E342A8EB6CA00D6FFFC /* ThreadsTabView.swift */; };
+		56CE1E3B2A8EDEA100D6FFFC /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E3A2A8EDEA100D6FFFC /* FeedView.swift */; };
+		56CE1E3E2A8EDED300D6FFFC /* AddThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E3D2A8EDED300D6FFFC /* AddThreadView.swift */; };
+		56CE1E412A8EDEF100D6FFFC /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E402A8EDEF100D6FFFC /* ExploreView.swift */; };
+		56CE1E452A8EDF2600D6FFFC /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E442A8EDF2600D6FFFC /* ActivityView.swift */; };
+		56CE1E492A8EDFAD00D6FFFC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E482A8EDFAD00D6FFFC /* ProfileView.swift */; };
+		56CE1E4B2A8EE1C200D6FFFC /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E4A2A8EE1C200D6FFFC /* FeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,12 @@
 		56CE1E2A2A8EAEB100D6FFFC /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		56CE1E2C2A8EB02B00D6FFFC /* ThreadsTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTextFieldModifier.swift; sourceTree = "<group>"; };
 		56CE1E342A8EB6CA00D6FFFC /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
+		56CE1E3A2A8EDEA100D6FFFC /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		56CE1E3D2A8EDED300D6FFFC /* AddThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThreadView.swift; sourceTree = "<group>"; };
+		56CE1E402A8EDEF100D6FFFC /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		56CE1E442A8EDF2600D6FFFC /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		56CE1E482A8EDFAD00D6FFFC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		56CE1E4A2A8EE1C200D6FFFC /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +102,14 @@
 		56CE1E202A8EA57A00D6FFFC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				56CE1E312A8EB5B900D6FFFC /* Tab Bar */,
+				56CE1E422A8EDF0D00D6FFFC /* Activity */,
+				56CE1E362A8EDE3A00D6FFFC /* AddThreads */,
 				56CE1E252A8EA61400D6FFFC /* Authentication */,
+				56CE1E372A8EDE5800D6FFFC /* Explore */,
+				56CE1E382A8EDE5F00D6FFFC /* Feed */,
+				56CE1E462A8EDF9100D6FFFC /* Profile */,
 				56CE1E262A8EA62600D6FFFC /* Root */,
+				56CE1E312A8EB5B900D6FFFC /* Tab Bar */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -157,6 +174,87 @@
 				56CE1E342A8EB6CA00D6FFFC /* ThreadsTabView.swift */,
 			);
 			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		56CE1E362A8EDE3A00D6FFFC /* AddThreads */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E3C2A8EDEC400D6FFFC /* View */,
+			);
+			path = AddThreads;
+			sourceTree = "<group>";
+		};
+		56CE1E372A8EDE5800D6FFFC /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E3F2A8EDEE900D6FFFC /* View */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		56CE1E382A8EDE5F00D6FFFC /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E392A8EDE9600D6FFFC /* View */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		56CE1E392A8EDE9600D6FFFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E4A2A8EE1C200D6FFFC /* FeedCell.swift */,
+				56CE1E3A2A8EDEA100D6FFFC /* FeedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56CE1E3C2A8EDEC400D6FFFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E3D2A8EDED300D6FFFC /* AddThreadView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56CE1E3F2A8EDEE900D6FFFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E402A8EDEF100D6FFFC /* ExploreView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56CE1E422A8EDF0D00D6FFFC /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E432A8EDF1600D6FFFC /* View */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		56CE1E432A8EDF1600D6FFFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E442A8EDF2600D6FFFC /* ActivityView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56CE1E462A8EDF9100D6FFFC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E472A8EDFA700D6FFFC /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		56CE1E472A8EDFA700D6FFFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56CE1E482A8EDFAD00D6FFFC /* ProfileView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,11 +327,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CE1E3B2A8EDEA100D6FFFC /* FeedView.swift in Sources */,
+				56CE1E412A8EDEF100D6FFFC /* ExploreView.swift in Sources */,
 				56CE1E292A8EA64500D6FFFC /* LoginView.swift in Sources */,
+				56CE1E452A8EDF2600D6FFFC /* ActivityView.swift in Sources */,
+				56CE1E3E2A8EDED300D6FFFC /* AddThreadView.swift in Sources */,
+				56CE1E4B2A8EE1C200D6FFFC /* FeedCell.swift in Sources */,
 				56CE1E142A8EA56300D6FFFC /* ContentView.swift in Sources */,
 				56CE1E352A8EB6CA00D6FFFC /* ThreadsTabView.swift in Sources */,
 				56CE1E2D2A8EB02B00D6FFFC /* ThreadsTextFieldModifier.swift in Sources */,
 				56CE1E122A8EA56300D6FFFC /* ThreadsApp.swift in Sources */,
+				56CE1E492A8EDFAD00D6FFFC /* ProfileView.swift in Sources */,
 				56CE1E2B2A8EAEB100D6FFFC /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
