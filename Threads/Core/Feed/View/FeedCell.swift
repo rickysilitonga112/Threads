@@ -17,7 +17,7 @@ struct FeedCell: View {
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
                 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 6) {
                     HStack {
                         Text("ricky_silitonga")
                             .font(.footnote)
