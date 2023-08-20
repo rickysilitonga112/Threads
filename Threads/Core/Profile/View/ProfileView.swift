@@ -88,7 +88,7 @@ struct ProfileView: View {
                 
                 LazyVStack {
                     ForEach(0...15, id: \.self) { _ in
-                        UserCell()
+                        FeedCell()
                     }
                 }
                 
