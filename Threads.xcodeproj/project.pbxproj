@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5672B0732A936CCF00D427A9 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672B0722A936CCF00D427A9 /* EditProfileView.swift */; };
 		56CE1E122A8EA56300D6FFFC /* ThreadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E112A8EA56300D6FFFC /* ThreadsApp.swift */; };
 		56CE1E142A8EA56300D6FFFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E132A8EA56300D6FFFC /* ContentView.swift */; };
 		56CE1E162A8EA56300D6FFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CE1E152A8EA56300D6FFFC /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5672B0722A936CCF00D427A9 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		56CE1E0E2A8EA56300D6FFFC /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CE1E112A8EA56300D6FFFC /* ThreadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsApp.swift; sourceTree = "<group>"; };
 		56CE1E132A8EA56300D6FFFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5672B0712A936CAF00D427A9 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5672B0742A936CD400D427A9 /* View */,
+			);
+			path = "Edit Profile";
+			sourceTree = "<group>";
+		};
+		5672B0742A936CD400D427A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5672B0722A936CCF00D427A9 /* EditProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		56CE1E052A8EA56300D6FFFC = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +269,7 @@
 		56CE1E462A8EDF9100D6FFFC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5672B0712A936CAF00D427A9 /* Edit Profile */,
 				56CE1E512A90589700D6FFFC /* Model */,
 				56CE1E472A8EDFA700D6FFFC /* View */,
 			);
@@ -354,6 +373,7 @@
 			files = (
 				56CE1E4E2A90114500D6FFFC /* CircularProfileImage.swift in Sources */,
 				56CE1E3B2A8EDEA100D6FFFC /* FeedView.swift in Sources */,
+				5672B0732A936CCF00D427A9 /* EditProfileView.swift in Sources */,
 				56CE1E412A8EDEF100D6FFFC /* ExploreView.swift in Sources */,
 				56CE1E292A8EA64500D6FFFC /* LoginView.swift in Sources */,
 				56CE1E452A8EDF2600D6FFFC /* ActivityView.swift in Sources */,
