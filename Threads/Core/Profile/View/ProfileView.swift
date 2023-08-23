@@ -19,85 +19,99 @@ struct ProfileView: View {
     @Namespace var animation
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        VStack(alignment: .leading) {
-                            Text("Lewis Hamilton")
-                                .font(.title2)
-                                .fontWeight(.semibold)
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading, spacing: 12) {
+                            VStack(alignment: .leading) {
+                                Text("Lewis Hamilton")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                
+                                Text("lewis.hamilton")
+                                    .font(.subheadline)
+                            }
                             
-                            Text("lewis.hamilton")
-                                .font(.subheadline)
+                            Text("Formula one driver for lamborghini")
+                                .font(.footnote)
+                            Text("2 followers")
+                                .font(.caption)
+                                .foregroundColor(.gray)
                         }
                         
-                        Text("Formula one driver for lamborghini")
-                            .font(.footnote)
-                        Text("2 followers")
-                            .font(.caption)
-                            .foregroundColor(.gray)
+                        Spacer()
+                        
+                        CircularProfileImage(image: "profile-img")
                     }
-                    
-                    Spacer()
-                    
-                    CircularProfileImage(image: "profile-img")
                 }
-            }
-            
-            Button {
-                // follow
-            } label: {
-                Text("Follow")
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-                    .frame(width: 352, height: 36)
-                    .background(.black)
-                    .cornerRadius(8)
-            }
+                
+                Button {
+                    // follow
+                } label: {
+                    Text("Follow")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .frame(width: 352, height: 36)
+                        .background(.black)
+                        .cornerRadius(8)
+                }
 
-            // profile filter section
-            VStack {
-                HStack(spacing: 0) {
-                    ForEach(ProfileThreadFilter.allCases) { filter in
-                        VStack {
-                            Text(filter.title.capitalized)
-                                .font(.subheadline)
-                                .fontWeight(boldSelectedFilter == filter ? .semibold : .regular)
-                            
-                            if selectedFilter == filter {
-                                Rectangle()
-                                    .frame(width: filterBarWidth, height: 3)
-                                    .matchedGeometryEffect(id: "filter", in: animation)
-                            } else {
-                                Rectangle()
-                                    .frame(width: filterBarWidth, height: 3)
-                                    .foregroundColor(.clear)
+                // profile filter section
+                VStack {
+                    HStack(spacing: 0) {
+                        ForEach(ProfileThreadFilter.allCases) { filter in
+                            VStack {
+                                Text(filter.title.capitalized)
+                                    .font(.subheadline)
+                                    .fontWeight(boldSelectedFilter == filter ? .semibold : .regular)
+                                
+                                if selectedFilter == filter {
+                                    Rectangle()
+                                        .frame(width: filterBarWidth, height: 3)
+                                        .matchedGeometryEffect(id: "filter", in: animation)
+                                } else {
+                                    Rectangle()
+                                        .frame(width: filterBarWidth, height: 3)
+                                        .foregroundColor(.clear)
+                                }
                             }
-                        }
-                        .onTapGesture {
-                            // need this separate from withAnimation to fix the delay bug on text bold transition
-                            boldSelectedFilter = filter
-                            
-                            withAnimation(Animation.spring()) {
-                                selectedFilter = filter
+                            .onTapGesture {
+                                // need this separate from withAnimation to fix the delay bug on text bold transition
+                                boldSelectedFilter = filter
+                                
+                                withAnimation(Animation.spring()) {
+                                    selectedFilter = filter
+                                }
                             }
                         }
                     }
-                }
-                
-                LazyVStack {
-                    ForEach(0...15, id: \.self) { _ in
-                        FeedCell()
+                    
+                    LazyVStack {
+                        ForEach(0...15, id: \.self) { _ in
+                            FeedCell()
+                        }
                     }
+                    
+                    .padding(.top, 16)
                 }
-                
-                .padding(.top, 16)
             }
+            .padding(.horizontal)
+            .padding(.vertical, 6)
             
-            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        // logout
+                        AuthService.shared.signOut()
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundColor(Color.black)
+                    }
+                }
+            }
         }
-        .padding(.horizontal)
+        
     }
 }
 
