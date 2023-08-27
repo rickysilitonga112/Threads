@@ -6,19 +6,30 @@
 //
 
 import Firebase
+import FirebaseFirestoreSwift
 
 class AuthService {
     static let shared = AuthService()
     
     @Published var userSession: FirebaseAuth.User?
     
+    init() {
+        // check if there is log in user or not
+//        if let userSession = Auth.auth().currentUser {
+//            // if the user session is not nil, add that user session to the publisher user session
+//            self.userSession = userSession
+//
+//            print("DEBUG: User session: \(userSession.uid)")
+//        }
+        
+        self.userSession = Auth.auth().currentUser
+    }
+    
     @MainActor
     func login(email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
-            
-            print("DEBUG: Succes to sign in the user with id: \(result.user.uid)")
         } catch {
             print("DEBUG: Failed to sign in the user with error: \(error.localizedDescription)")
         }
@@ -30,7 +41,7 @@ class AuthService {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             
-            print("DEBUG: Succes to create user with id: \(result.user.uid)")
+            try await uploadUserData(email: email, password: password, fullName: fullName, userName: username, id: result.user.uid)
         } catch {
             print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
         }
@@ -45,5 +56,19 @@ class AuthService {
         }
         // make sure the session is nil locally
         self.userSession = nil
+        
+        // make userSession in ProfileView is nil
+        UserService.shared.currentUser = nil
+        
+    }
+    
+    @MainActor
+    private func uploadUserData(email: String, password: String, fullName: String, userName: String, id: String) async throws {
+        let user = User(id: id, email: email, fullName: fullName, userName: userName)
+        guard let userData = try? Firestore.Encoder().encode(user) else { return }
+        
+        try await Firestore.firestore().collection("user").document(id).setData(userData)
+        
+        try await UserService.shared.currentUser = user
     }
 }

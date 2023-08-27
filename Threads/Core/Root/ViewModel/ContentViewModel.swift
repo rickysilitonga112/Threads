@@ -10,14 +10,14 @@ import Combine
 
 class ContentViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
-    var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     
     init() {
-        if let user = Auth.auth().currentUser {
-            self.userSession = user
-        }
-        
+//        if let user = Auth.auth().currentUser {
+//            self.userSession = user
+//            dump(userSession)
+//        }
         setupSubscribers()
     }
     
