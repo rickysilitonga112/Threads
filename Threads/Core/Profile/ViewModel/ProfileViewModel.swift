@@ -18,10 +18,12 @@ class ProfileViewModel: ObservableObject {
     }
     
     private func setupSubscribers() {
-        print("User service: \(UserService.shared.currentUser?.email)")
+        print("User service: \(String(describing: UserService.shared.currentUser?.email))")
         UserService.shared.$currentUser.sink { [weak self] user in
             self?.currentUser = user
-            print("DEBUG: Current iser in Combine: \(user)")
+            if let user = user  {
+                print("DEBUG: Current iser in Combine: \(user)")
+            }
         }.store(in: &cancellables)
     }
 }

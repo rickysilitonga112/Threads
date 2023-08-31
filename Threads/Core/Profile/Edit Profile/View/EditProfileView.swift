@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditProfileView: View {
+    @StateObject var viewModel = EditProfileViewModel()
     @State private var bio = ""
     @State private var link = ""
     @State private var isPrivate = false
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
@@ -31,7 +34,17 @@ struct EditProfileView: View {
                         
                         Spacer()
                         
-                        CircularProfileImage(image: "profile-img")
+                        PhotosPicker(selection: $viewModel.selectedItem) {
+                            if let image = viewModel.profileImage {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                CircularProfileImage(image: "profile-img")
+                            }
+                        }
                     }
                     
                     Divider()
@@ -83,7 +96,7 @@ struct EditProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        // cancel
+                        dismiss()
                     } label: {
                         Text("Cancel")
                             .font(.subheadline)
@@ -93,7 +106,11 @@ struct EditProfileView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        //
+                        // save all the changes to firebase
+                        Task {
+                            try await viewModel.uploadUserData()
+                        }
+                        dismiss()
                     } label: {
                         Text("Done")
                             .font(.subheadline)
@@ -110,5 +127,6 @@ struct EditProfileView: View {
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
         EditProfileView()
+            .environmentObject(CurrentUserProfileViewModel())
     }
 }

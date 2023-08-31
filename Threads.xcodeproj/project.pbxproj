@@ -28,6 +28,8 @@
 		5672B0A42A9B890500D427A9 /* UserContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672B0A32A9B890500D427A9 /* UserContentListView.swift */; };
 		5672B0A62A9BFCC400D427A9 /* CurrentProfileActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672B0A52A9BFCC400D427A9 /* CurrentProfileActionButton.swift */; };
 		5672B0A82A9BFEEF00D427A9 /* CurrentProfileActionButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672B0A72A9BFEEF00D427A9 /* CurrentProfileActionButtonModifier.swift */; };
+		5672B0AA2A9FD3EE00D427A9 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672B0A92A9FD3EE00D427A9 /* EditProfileViewModel.swift */; };
+		5672B0AE2AA110A800D427A9 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672B0AD2AA110A800D427A9 /* ImageUploader.swift */; };
 		56CE1E122A8EA56300D6FFFC /* ThreadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E112A8EA56300D6FFFC /* ThreadsApp.swift */; };
 		56CE1E142A8EA56300D6FFFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE1E132A8EA56300D6FFFC /* ContentView.swift */; };
 		56CE1E162A8EA56300D6FFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CE1E152A8EA56300D6FFFC /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		5672B0A32A9B890500D427A9 /* UserContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentListView.swift; sourceTree = "<group>"; };
 		5672B0A52A9BFCC400D427A9 /* CurrentProfileActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProfileActionButton.swift; sourceTree = "<group>"; };
 		5672B0A72A9BFEEF00D427A9 /* CurrentProfileActionButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProfileActionButtonModifier.swift; sourceTree = "<group>"; };
+		5672B0A92A9FD3EE00D427A9 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		5672B0AD2AA110A800D427A9 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		56CE1E0E2A8EA56300D6FFFC /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CE1E112A8EA56300D6FFFC /* ThreadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsApp.swift; sourceTree = "<group>"; };
 		56CE1E132A8EA56300D6FFFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5672B0742A936CD400D427A9 /* View */,
+				5672B0AC2A9FD40200D427A9 /* ViewModel */,
 			);
 			path = "Edit Profile";
 			sourceTree = "<group>";
@@ -200,6 +205,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5672B0AC2A9FD40200D427A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5672B0A92A9FD3EE00D427A9 /* EditProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		56CE1E052A8EA56300D6FFFC = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				5672B08E2A9630EE00D427A9 /* UserService.swift */,
+				5672B0AD2AA110A800D427A9 /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -531,6 +545,7 @@
 				56CE1E452A8EDF2600D6FFFC /* ActivityView.swift in Sources */,
 				5672B08B2A96129600D427A9 /* LoginViewModel.swift in Sources */,
 				5672B0A22A9B887900D427A9 /* ProfileHeaderView.swift in Sources */,
+				5672B0AE2AA110A800D427A9 /* ImageUploader.swift in Sources */,
 				56CE1E3E2A8EDED300D6FFFC /* AddThreadView.swift in Sources */,
 				56CE1E502A90115000D6FFFC /* UserCell.swift in Sources */,
 				5672B0952A99594300D427A9 /* ExploreViewModel.swift in Sources */,
@@ -541,6 +556,7 @@
 				5672B0892A93E77300D427A9 /* ContentViewModel.swift in Sources */,
 				5672B0922A96329800D427A9 /* ProfileViewModel.swift in Sources */,
 				56CE1E142A8EA56300D6FFFC /* ContentView.swift in Sources */,
+				5672B0AA2A9FD3EE00D427A9 /* EditProfileViewModel.swift in Sources */,
 				5672B09D2A9B872F00D427A9 /* CurrentUserProfileView.swift in Sources */,
 				56CE1E352A8EB6CA00D6FFFC /* ThreadsTabView.swift in Sources */,
 				56CE1E2D2A8EB02B00D6FFFC /* ThreadsTextFieldModifier.swift in Sources */,
