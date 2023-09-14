@@ -14,15 +14,10 @@ class AuthService {
     @Published var userSession: FirebaseAuth.User?
     
     init() {
-        // check if there is log in user or not
-//        if let userSession = Auth.auth().currentUser {
-//            // if the user session is not nil, add that user session to the publisher user session
-//            self.userSession = userSession
-//
-//            print("DEBUG: User session: \(userSession.uid)")
-//        }
-        
         self.userSession = Auth.auth().currentUser
+        if let userSession = self.userSession {
+            print("DEBUG: Current user session id: \(userSession.uid)")
+        }
     }
     
     @MainActor
@@ -69,6 +64,6 @@ class AuthService {
         
         try await Firestore.firestore().collection("user").document(id).setData(userData)
         
-        try await UserService.shared.currentUser = user
+        UserService.shared.currentUser = user
     }
 }

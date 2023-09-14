@@ -44,7 +44,6 @@ struct LoginView: View {
                 }
                 
                 Button {
-                    // login
                     Task {
                         try await viewModel.login()
                     }
@@ -62,7 +61,6 @@ struct LoginView: View {
                 Divider()
                 
                 NavigationLink {
-                    // sign up
                     RegistrationView()
                 } label: {
                     HStack(spacing: 3) {
